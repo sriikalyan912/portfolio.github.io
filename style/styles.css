@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.fullsize{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.front{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.cover{
+    width: 60%;
+    height: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card{
+    width: 50%;
+    height: 75%;
+    position: relative;
+
+    box-shadow: gray 0px 0px 10px;
+
+    transform-style: preserve-3d;
+}
+
+.card-design{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.card-text{
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-text .name{
+    font-size: x-large;
+    font-family: 'Dancing Script', cursive;
+
+    transition: all 0.5s ease;
+}
+
+.card-text .profession{
+    font-variant-caps: all-petite-caps;
+    font-family: 'PT Sans', sans-serif;
+
+    transition: all 0.5s ease;
+}
+
+.turn-card{
+    width: 40%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.box-button{
+    background-color: #0099ff;
+    color: white;
+    padding: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+    font-family: sans-serif;
+
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    .cover{
+        width: 95%;
+    }
+    .card{
+        width: 90%;
+        height: 75%;
+    }
+    .card-text .name{
+        font-size: large;
+        font-family: 'Dancing Script', cursive;
+    }
+    
+    .card-text .profession{
+        font-variant-caps: all-petite-caps;
+        font-family: 'PT Sans', sans-serif;
+    }
+}
