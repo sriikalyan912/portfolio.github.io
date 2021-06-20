@@ -1,119 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Source+Code+Pro:wght@500&display=swap');
+
 *{
-    padding: 0;
     margin: 0;
-
+    padding: 0;
 }
 
-html, body{
-    width: 100%;
-    height: 100%;
-}
-
-.fullsize{
-    width: 100%;
-    height: 100%;
-}
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.front{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: column;
-}
-
-.cover{
-    width: 60%;
-    height: 40%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.card{
-    width: 50%;
-    height: 75%;
-    position: relative;
-
-    box-shadow: gray 0px 0px 10px;
-
-    transform-style: preserve-3d;
-}
-
-.card-design{
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-.card-text{
-    position: absolute;
-
+section{
+    height: 100vh;
+    background-color: rgb(65, 58, 58);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
 
-.card-text .name{
-    font-size: x-large;
-    font-family: 'Dancing Script', cursive;
 
-    transition: all 0.5s ease;
-}
-
-.card-text .profession{
-    font-variant-caps: all-petite-caps;
-    font-family: 'PT Sans', sans-serif;
-
-    transition: all 0.5s ease;
-}
-
-.turn-card{
-    width: 40%;
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.box-button{
-    background-color: #0099ff;
+.myname h1{
+    width: fit-content;
     color: white;
-    padding: 5px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-
-    font-family: sans-serif;
-
-    cursor: pointer;
+    font-size:60px;
+    padding: 40px 0px 40px 0px;
+    font-family: 'Merienda', cursive;
 }
 
-@media screen and (max-width: 400px) {
-    .cover{
-        width: 95%;
+.myprofession{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.myprofession .static-text{
+    width: 40%;
+}
+
+.myprofession .dynamic-text{
+    width: 60%;
+}
+.myprofession h3{
+    font-size: 40px;
+    text-align: right;
+    color: white;
+    position: relative;
+    font-family: 'Source Code Pro', monospace;
+
+}
+.myprofession .typing{
+    position: relative;
+    margin-left: 10px;
+    color: #E74C3C;
+    text-align: left;
+
+}
+
+
+.typing::after{
+    content : ' ';
+    position: absolute;
+    border-right: 2px solid #E74C3C;
+    height: 100%;
+    animation: blink 0.5s infinite;
+
+
+}
+
+
+
+@keyframes blink{
+    0%{
+        opacity: 0;
     }
-    .card{
-        width: 90%;
-        height: 75%;
+    100%{
+        opacity: 100%;
     }
-    .card-text .name{
-        font-size: large;
-        font-family: 'Dancing Script', cursive;
+}
+
+
+@media screen and (max-width:400px) {
+
+    .myname h1{
+        font-size: 30px;
+        position: absolute;
+        top: 30%;
+        left: 20%;
     }
+    .myprofession .static-text, .myprofession .dynamic-text{
+        width: 100%;
+    }
+    .myprofession .static-text{
+        position: absolute;
+        top: 50%;
+    }
+    .myprofession .dynamic-text{
+        position: absolute;
+        top: 60%;
+    }
+
+    .myprofession{
+        flex-direction: column;
+    }
+    .myprofession h3, .myprofession .typing{
+        text-align: center;
+        font-size: 20px;
+    }
+
     
-    .card-text .profession{
-        font-variant-caps: all-petite-caps;
-        font-family: 'PT Sans', sans-serif;
-    }
 }
