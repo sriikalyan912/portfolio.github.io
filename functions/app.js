@@ -1,6 +1,6 @@
 // typing effect
 
-const content = [' WEB DEVELOPER', ' SOFTWARE ENGINEER'];
+const content = ['WEB DEVELOPER', 'PROGRAMMER'];
 let count = 0;
 let index = 0;
 let currentText = '';
@@ -23,3 +23,4 @@ let letter = '';
     setTimeout(typing, 200);
 
 }());
+
