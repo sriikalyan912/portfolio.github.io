@@ -83,24 +83,29 @@ section:nth-child(even){
 
 .title{
     width: 100%;
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+
 }
 
 .title h1{
-    height: 10%;
+    height: fit-content;
     font-size: 40px;
-    padding: 10px;
+    padding: 10px 0px 0px 10px;
     font-family: 'Noto Sans JP', sans-serif;
     text-align: left;
 }
 
-.line{
-    width: 100%;
-    height: 2px;
+
+.line-color{
+    border-bottom: 2px solid rgb(139, 139, 139);
+}
+.line-white{
+    border-bottom: 2px solid white;
 }
 
-.about .line{
-    background-color: rgb(65, 58, 58);
-}
 .about .about-content{
     width: 100%;
     height: 90%;
@@ -108,12 +113,49 @@ section:nth-child(even){
     justify-content: center;
     align-items: center;
 }
+
+.ovel-container{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    flex-direction: column;
+
+ 
+}
+
+.ovel-container .ovel-box{
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgb(65, 58, 58);
+    color: white;
+
+    border-radius: 5px 30px 30px 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.ovel-container .ovel-box i{
+    width: fit-content;
+}
+.ovel-container .ovel-box img{
+    width: 32px;
+}
+.ovel-container .ovel-box .cont{
+    margin-left: 20px;
+    width: max-content;
+    text-align: left;
+}
+
 .about .about-content p{
     width: 80%;
     font-size: 25px;
 }
-
-
 
 .work{
     width: 100%;
@@ -122,106 +164,79 @@ section:nth-child(even){
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-
-    position: relative;
 }
 
-.work .line{
-    background-color: white;
-}
-
-
-.work-container{
+.work .recent-works{
     width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.work-wrapper{
-    height: fit-content;
-    width: fit-content;
-
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-
-    grid-gap: 100px;
-    
-}
-
-.work-box{
-    width: 350px;
-    height: 350px;
-    overflow: hidden;
-    border-radius: 3px;
-
-    position: relative;
-
-
-}
-
-.work-box img{
-    width: 100%;
-    height: 100%;
-
-    opacity: 1;
-
-    position: absolute;
-
-    transition: opacity 0.5;
-
-}
-
-.work-box .work-content{
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
+    height: 90vh;
 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+}
+
+.worksection .work .title{
+    height: 15vh;
+}
+
+.workbox{
+    width: 350px;
+    height: 350px;
+    border-radius: 3px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.workbox img, .content, .content-background{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+}
+
+.workbox .content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     flex-direction: column;
-    
     transform: translateY(100%);
     transition: transform 0.5s;
 }
 
+.workbox:hover .content{
+    transform: translateY(0%);
+}
 
-.work-box .work-content p{
+.workbox .content h1{
+    font-size: 30px;
+}
+
+.workbox .content p{
     width: 90%;
     font-size: 20px;
 }
 
-.work-box .work-content button{
-    width: 100px;
+.workbox .content a{
+    padding: 10px 20px;
     background-color: white;
-    padding: 10px;
-
+    text-decoration: none;
+    color: black;
     border-radius: 5px;
-    outline: none;
-    border: none;
-
-    cursor: pointer;
 }
 
-.work-box .work-background{
-    width: 100%;
-    height: 100%;
-    position: absolute;
+.workbox .content-background{
+    
+    background: linear-gradient( to bottom, rgb(51, 51, 51), black);
     opacity: 0;
-    background: linear-gradient(to bottom,  rgb(49, 49, 49),rgb(0, 0, 0));
     transition: all 0.5s;
 }
 
-.work-box:hover .work-background{
+.workbox:hover .content-background{
     opacity: 0.8;
 }
 
-.work-box:hover .work-content{
-    transform: translateY(0%);
-}
 
 @keyframes blink{
     0%{
@@ -230,6 +245,24 @@ section:nth-child(even){
     100%{
         opacity: 100%;
     }
+}
+
+@media screen and (max-width:900px){
+
+    .work .recent-works{
+        height: 190vh;
+        flex-direction: column;
+    }
+
+    .worksection{
+        height: 200vh;
+    }
+
+    .workbox{
+        width: 300px;
+        height: 300px;
+    }
+
 }
 
 
@@ -265,4 +298,5 @@ section:nth-child(even){
         font-size: 18px;
     }
     
+
 }
