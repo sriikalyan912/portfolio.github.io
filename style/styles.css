@@ -298,5 +298,11 @@ section:nth-child(even){
         font-size: 18px;
     }
     
-
+    .ovel-container .ovel-box{
+        width: 90%;
+        font-size: 18pxs;
+    }
+    .ovel-container .ovel-box img{
+        width: 18px;
+    }
 }
